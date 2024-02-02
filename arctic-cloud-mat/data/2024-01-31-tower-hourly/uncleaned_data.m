@@ -57,13 +57,13 @@ eps_cs10 = DLR ./ (sigma * T10.^4);
 Pw2 = (q2 .* Pa)./(q2 + .622); 
 Pw10 = (q10 .* Pa)./(q10 + .622);
 
-% Calculate expected DLR based on original Brunt Model (2)
-eps_b2 = 0.52 + 0.065*sqrt(Pw2);
-eps_b10 = 0.52 + 0.065*sqrt(Pw10); % clear sky emissivity from Brunt eq
+% % Calculate expected DLR based on original Brunt Model (2)
+% eps_b2 = 0.52 + 0.065*sqrt(Pw2);
+% eps_b10 = 0.52 + 0.065*sqrt(Pw10); % clear sky emissivity from Brunt eq
 
-% % Calculate expected DLR based on calibrated Brunt Model (1)
-% eps_b2 = 0.618 + 0.054*sqrt(Pw2);
-% eps_b10 = 0.618 + 0.054*sqrt(Pw10); % clear sky emissivity
+% Calculate expected DLR based on calibrated Brunt Model (1)
+eps_b2 = 0.618 + 0.054*sqrt(Pw2);
+eps_b10 = 0.618 + 0.054*sqrt(Pw10); % clear sky emissivity
 
 DLR_exp2 = eps_b2*sigma.*T2.^4;
 DLR_exp10 = eps_b10*sigma.*T10.^4; % Expected DLR based on Brunt eq
