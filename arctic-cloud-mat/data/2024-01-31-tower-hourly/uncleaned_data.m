@@ -53,9 +53,9 @@ eps_cs2 = DLR ./ (sigma * T2.^4);
 eps_cs10 = DLR ./ (sigma * T10.^4);
 
 %% Brunt Model Calculation
-% Convert water vapor content to partial pressure of water vapor
-Pw2 = (q2 .* Pa)./(q2 + .622); 
-Pw10 = (q10 .* Pa)./(q10 + .622);
+% Convert water vapor content to partial pressure of water vapor (hPa)
+Pw2 = ((q2 .* Pa)./(q2 + .622))/100; 
+Pw10 = ((q10 .* Pa)./(q10 + .622))/100;
 
 % % Calculate expected DLR based on original Brunt Model (2)
 % eps_b2 = 0.52 + 0.065*sqrt(Pw2);
@@ -89,7 +89,7 @@ grid on; hold on;
 validIndices = ~isnan(DLR) & ~isnan(DLR_exp2);
 scatter(DLR(validIndices),DLR_exp2(validIndices), .5, 'b');
 
-% Insert a black line to mark expected trendline
+% Insert a black line to mark expected = measured
 line([0, max(max(DLR(validIndices)),max(DLR_exp2(validIndices)))], ...
     [0, max(max(DLR(validIndices)),max(DLR_exp2(validIndices)))], ...
     'Color', 'k', 'LineStyle', '-');
