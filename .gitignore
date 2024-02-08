@@ -1,4 +1,15 @@
-.venv/
-poetry.lock
-pyproject.toml
-tatus
+# Jupyter Notebooks
+.ipynb_checkpoints
+
+# macOC Desktop Services Store
+.DS_Store
+
+# Python byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+
+# Virtual Environments
+.venv
+
+# Visual Studio Code
+.vscode
