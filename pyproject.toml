@@ -9,9 +9,9 @@ readme = "README.md"
 python = "^3.11"
 jupyterlab = "^4.0.12"
 matplotlib = "^3.8.2"
+netcdf4 = "^1.6.5"
 numpy = "^1.26.3"
 pandas = "^2.2.0"
-netcdf4 = "^1.6.5"
 seaborn = "^0.13.2"
 
 
