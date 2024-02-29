@@ -32,7 +32,9 @@ for filename in os.listdir(towermet_path):
         # Rename the dataframe when more data is imported
 
         df = df.astype('float')
-        df = df[df['HourMin'] != 2400] # Filter out invalid HourMin values 
+        condition = df['HourMin'] == 2400
+        df.loc[condition, 'JulianDay'] += 1
+        df.loc[condition, 'HourMin'] = 0000
         towermet_dfs.append(df)
                 
 for filename in os.listdir(towerrad_path):
@@ -48,7 +50,9 @@ for filename in os.listdir(towerrad_path):
         # Rename the dataframe when more data is imported
 
         df = df.astype('float')
-        df = df[df['HourMin'] != 2400] # Filter out invalid HourMin values 
+        condition = df['HourMin'] == 2400
+        df.loc[condition, 'JulianDay'] += 1
+        df.loc[condition, 'HourMin'] = 0000
         towerrad_dfs.append(df)
         
 for filename in os.listdir(bsrnrad_path):
@@ -64,7 +68,9 @@ for filename in os.listdir(bsrnrad_path):
         # Rename the dataframe when more data is imported
 
         df = df.astype('float')
-        df = df[df['HourMin'] != 2400] # Filter out invalid HourMin values 
+        condition = df['HourMin'] == 2400
+        df.loc[condition, 'JulianDay'] += 1
+        df.loc[condition, 'HourMin'] = 0000
         bsrnrad_dfs.append(df)
 
 # Concatenate all dataframes into a single dataframe
@@ -167,6 +173,15 @@ bsrnrad_df.sort_values(by='Datetime', inplace=True)
 towermet_df.set_index('Datetime', inplace=True)
 towerrad_df.set_index('Datetime', inplace=True)
 bsrnrad_df.set_index('Datetime', inplace=True)
+
+### Join dataframes into one dataframe with pertinant columns
+
+towermet_df_select = towermet_df[['Pressure[mbar]', '10MRH[%]', '6MRH[%]', '2MRH[%]', '10MTair[degC]', '6MTair[degC]', '2MTair[degC]']]
+towerrad_df_select = towerrad_df[['LWTotalDownwelling[W/m^2]']]
+bsrnrad_df_select = bsrnrad_df[['LWTotalDownwelling[W/m^2]']].copy()
+bsrnrad_df_select.rename(columns={'LWTotalDownwelling[W/m^2]': 'bsrnLWTotalDownwelling[W/m^2]'}, inplace=True)
+
+target_df = towermet_df_select.join(towerrad_df_select, how='outer').join(bsrnrad_df_select, how='outer')
 
 ### 1) Calculate effective emissivity
  

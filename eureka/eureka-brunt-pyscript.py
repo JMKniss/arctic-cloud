@@ -22,6 +22,7 @@ towerrad_05152011_file = '../notebooks/data/eureka-data/tower-rad/eurradiationtw
 
 ### Create meteorological dataframes
 
+
 #### Extract the header data separately (delimiters are not the same)
 
 with open(towermet_05152011_file, "r") as f:
@@ -129,20 +130,21 @@ DLRmask10 = df['DLR10'].notna() & df['LWTotalDownwelling[W/m^2]'].notna()
 
 ## Plot e_sky over time
 plt.scatter(df.index[epsmask2], df['eps2'][epsmask2], label='2m', s=0.5, color='blue')
-plt.scatter(df.index[epsmask6], df['eps6'][epsmask6], label='6m', s=0.5, color='cyan')
-plt.scatter(df.index[epsmask10], df['eps10'][epsmask10], label='10m', s=0.5, color='red')
+# plt.scatter(df.index[epsmask6], df['eps6'][epsmask6], label='6m', s=0.5, color='cyan')
+# plt.scatter(df.index[epsmask10], df['eps10'][epsmask10], label='10m', s=0.5, color='red')
 
 # Set ticks at regular intervals
 # Find the start and end dates in your DataFrame
-start_date = df.index.min()
-end_date = df.index.max()
+# start_date = df.index.min()
+# end_date = df.index.max()
 
 # # Generate ticks at regular intervals between start and end dates
-ticks = pd.date_range(start=start_date, end=end_date, freq='12h')
-tick_labels = [date.strftime('%Y-%m-%d') if i % 4 == 0 else None for i, date in enumerate(ticks)]
+# ticks = pd.date_range(start=start_date, end=end_date, freq='4h')
+# tick_labels = [date.strftime('%Y-%m-%d') if i % 4 == 0 else None for i, date in enumerate(ticks)]
 
 # Format the plot
-plt.xticks(ticks, tick_labels)
+plt.ylim(0.68, 0.89)
+# plt.xticks(ticks, tick_labels)
 plt.xlabel('Time')
 plt.ylabel('Emissivity')
 plt.title('Emissivity over Time')
@@ -155,8 +157,8 @@ plt.show()
 
 ## Plot expected DLR vs measured DLR
 plt.scatter(df['LWTotalDownwelling[W/m^2]'][DLRmask2], df['DLR2'][DLRmask2], label='2m', s=0.5, color='blue')
-plt.scatter(df['LWTotalDownwelling[W/m^2]'][DLRmask6], df['DLR6'][DLRmask6], label='6m', s=0.5, color='cyan')
-plt.scatter(df['LWTotalDownwelling[W/m^2]'][DLRmask10], df['DLR10'][DLRmask10], label='10m', s=0.5, color='red')
+# plt.scatter(df['LWTotalDownwelling[W/m^2]'][DLRmask6], df['DLR6'][DLRmask6], label='6m', s=0.5, color='cyan')
+# plt.scatter(df['LWTotalDownwelling[W/m^2]'][DLRmask10], df['DLR10'][DLRmask10], label='10m', s=0.5, color='red')
 
 # Calculate the maximum value for x and y
 max_value = max(np.nanmax(df['LWTotalDownwelling[W/m^2]'][DLRmask2]), np.nanmax(df['DLR2'][DLRmask2]))
@@ -164,6 +166,7 @@ plt.xlim(0, max_value)
 plt.ylim(0, max_value)
 plt.grid()
 plt.plot([0,max_value],[0,max_value])
+
 
 # Format the plot
 plt.xlabel('Measured DLR')
@@ -177,8 +180,8 @@ plt.show()
 
 ## Plot expected DLR vs measured DLR
 plt.scatter(df['LWTotalDownwelling[W/m^2]'][DLRmask2], df['DLR2'][DLRmask2], label='2m', s=0.5, color='blue')
-plt.scatter(df['LWTotalDownwelling[W/m^2]'][DLRmask6], df['DLR6'][DLRmask6], label='6m', s=0.5, color='cyan')
-plt.scatter(df['LWTotalDownwelling[W/m^2]'][DLRmask10], df['DLR10'][DLRmask10], label='10m', s=0.5, color='red')
+# plt.scatter(df['LWTotalDownwelling[W/m^2]'][DLRmask6], df['DLR6'][DLRmask6], label='6m', s=0.5, color='cyan')
+# plt.scatter(df['LWTotalDownwelling[W/m^2]'][DLRmask10], df['DLR10'][DLRmask10], label='10m', s=0.5, color='red')
 
 # Calculate the maximum value for x and y
 max_value = max(np.nanmax(df['LWTotalDownwelling[W/m^2]'][DLRmask2]), np.nanmax(df['DLR2'][DLRmask2]))
