@@ -14,10 +14,10 @@ from datetime import datetime, timedelta
 
 ## Import data from Eureka observatory
 
-towermet_05152011_file = '../notebooks/data/eureka-data/tower-met/eurmeteorologicaltwr.b1.20110515.000000.txt'
+towermet_05152011_file = '../notebooks/data/eureka-data/tower-met/eurmeteorologicaltwr.b1.20080310.000000.txt'
 # Add additional tower met data files
 
-towerrad_05152011_file = '../notebooks/data/eureka-data/tower-rad/eurradiationtwr.b1.20110515.000000.txt'
+towerrad_05152011_file = '../notebooks/data/eureka-data/tower-rad/eurradiationtwr.b1.20080310.000000.txt'
 # Add additional tower radiation files
 
 ### Create meteorological dataframes
