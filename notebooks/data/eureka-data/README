@@ -1,0 +1,24 @@
+This directory contains ancillary broadband SW and LW data (upwelling & downwelling) from the flux tower in Eureka, Nunavut, Canada.  Environment Canada diffuse and direct SW data from the Safire Observatory is included for the purpose of quality control.  QCRad procedure was used to quality control the data.  Certain checks were turned off because of the concern on the distance between Safire and Flux tower (about 500 m).  I thank Bruce McArthur, David Halliwell, and Ormanda Niebergale at Environment Canada and Chuck Long at Pacific Northwest National Laboratory for making it possible to serve this dataset to public.
+
+Nobuki Matsui
+nobuki.matsui@noaa.gov
+
+May 23, 2011
+
+References
+
+Long, C. N., and Y. Shi, (2008): An Automated Quality Assessment and Control Algorithm for Surface Radiation Measurements, TOASJ, 2, 23-37, doi: 10.2174/1874282300802010023.
+
+Long, C. N. and Y. Shi, (2006): The QCRad Value Added Product: Surface Radiation Measurement Quality Control Testing, Including Climatologically Configurable Limits, Atmospheric Radiation Measurement Program Technical Report, ARM TR-074, 69 pp. Available via http://www.arm.gov/publications/tech_reports/arm-tr-074.pdf.
+
+Shi, Y. and C. N. Long, (2006): Surface Radiation Measurement Data Quality Assessment at the ARM TWP and NSA Sites, 16th ARM Science Team Meeting Proceedings, Albuquerque, New Mexico, March 27 - 31, 2006. Available online at http://www.arm.gov/publications/proceedings/conf16/extended_abs/shi_y.pdf.
+
+Shi, Y. and C. N. Long, (2005): Examples of Detecting Measurement Errors with the QCRad VAP, 15th ARM Science Team Meeting Proceedings, Daytona Beach, Florida, March 14-18, 2005. Available online at http://www.arm.gov/publications/proceedings/conf15/extended_abs/shi_y.pdf.
+
+Shi, Y. and C. N. Long, (2004): Techniques and Methods used to determine the Best Estimate of Total Downwelling Shortwave Radiation, 14th ARM Science Team Meeting Proceedings, Albuquerque, New Mexico, March 22-26, 2004. Available online at http://www.arm.gov/publications/proceedings/conf14/extended_abs/shi-y.pdf.
+
+Younkin, K. and C. N. Long, (2004): Improved Correction of IR Loss in Diffuse Shortwave Measurements: An ARM Value Added Product, Atmospheric Radiation Measurement Program Technical Report, ARM TR-009, Available online at http://www.arm.gov/publications/tech_reports/arm-tr-009.pdf.
+
+Shi, Y., and C. N. Long, (2003): Preliminary Analysis of Surface Radiation Measurement Data Quality at the SGP Extended Facilities, 13th ARM Science Team Meeting Proceedings, Broomfield, Colorado, March 31-April 4, 2003. Available online at http://www.arm.gov/publications/proceedings/conf13/extended_abs/shi-y.pdf.
+
+Shi, Y. and C. N. Long, (2002): Best Estimate Radiation Flux Value Added Product: Algorithm Operational Details and Explanations, Atmospheric Radiation Measurement Program Technical Report, ARM TR-008, Available at http://www.arm.gov/publications/tech_reports/arm-tr-008.pdf.
